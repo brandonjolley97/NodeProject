@@ -6,22 +6,22 @@
  */
 
 #include "Node.h"
-#include "iostream"
+#include <iostream>
 
 template <class Type>
 Node<Type>::Node()
 {
-	value = 0;
 	pointers = nullptr;
-
 }
+
 template <class Type>
 Node<Type>::Node(Type value)
 {
-	this->value = 0;
+	this->value = value;
 	pointers = nullptr;
 
 }
+
 template <class Type>
 Node<Type>::~Node()
 {
@@ -38,4 +38,10 @@ template <class Type>
 Node<Type> * Node<Type> :: getPointers()
 {
 	return this->pointers;
+}
+
+template <class Type>
+void Node<Type> :: setValue(Type value)
+{
+	this->value = value;
 }

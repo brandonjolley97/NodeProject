@@ -8,6 +8,8 @@
 #ifndef NODEMODEL_NODE_H_
 #define NODEMODEL_NODE_H_
 
+#include <iostream>
+
 
 template <class Type>
 class Node

@@ -10,11 +10,12 @@
 
 #include "Node.h"
 
+
 template <class Type>
 class ArrayNode : public Node<Type>
 {
 private:
-	ArrayNode next;
+	ArrayNode * next;
 public:
 	ArrayNode();
 	ArrayNode(Type value);

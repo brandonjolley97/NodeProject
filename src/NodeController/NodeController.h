@@ -10,10 +10,10 @@
 
 #include <iostream>
 #include <string>
-#include "../Model/Node.h"
-#include "../Model/Node.cpp"
-#include "../Model/ArrayNode.h"
-#include "../Model/ArrayNode.cpp"
+#include "../NodeModel/Node.h"
+#include "../NodeModel/Node.cpp"
+#include "../NodeModel/ArrayNode.h"
+#include "../NodeModel/ArrayNode.cpp"
 
 using namespace std;
 

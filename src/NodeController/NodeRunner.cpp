@@ -9,7 +9,7 @@
 
 int main()
 {
-	NodeController * baseController = new baseController();
+	NodeController * baseController = new NodeController();
 	baseController->start();
 	return 0;
 }

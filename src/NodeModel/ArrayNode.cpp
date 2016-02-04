@@ -45,3 +45,4 @@ ArrayNode<Type> * ArrayNode<Type> :: getNext()
 	return this->next;
 }
 
+

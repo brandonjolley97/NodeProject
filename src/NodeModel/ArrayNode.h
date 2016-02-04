@@ -22,6 +22,7 @@ public:
 	ArrayNode(Type value, ArrayNode * next);
 	virtual ~ArrayNode();
 	ArrayNode * getNext();
+	void setNext(ArrayNode * next);
 };
 
 #endif /* NODEMODEL_ARRAYNODE_H_ */

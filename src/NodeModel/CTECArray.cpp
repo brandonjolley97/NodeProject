@@ -13,7 +13,14 @@ using namespace std;
 template <class Type>
 CTECArray<Type>::CTECArray(int size)
 {
-	// TODO Auto-generated constructor stub
+	this->size = size;
+	head = nullptr;
+
+	if(size <= 0)
+	{
+		cerr << "Nope. Not Happening!" << endl;
+		return;
+	}
 
 }
 
@@ -66,7 +73,26 @@ void CTECArray<Type>:: set(int position, Type value)
 		}
 		else
 		{
-
+			ArrayNode<Type> * current = head;
+			for(int spot = 0; spot <= position; spot++)
+			{
+				if(spot != position)
+				{
+					current = current->getNext();
+				}
+				else
+				{
+					current->setValue(value);
+				}
+			}
 		}
 }
+
+
+
+
+
+
+
+
 

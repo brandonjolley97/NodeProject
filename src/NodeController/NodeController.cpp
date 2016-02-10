@@ -9,10 +9,8 @@
 
 NodeController::NodeController()
 {
-//	this->intNode.setValue(5);
-//	this->stringArrayNode.setValue("words are fun");
-	myStringArray = new CTECArray<string>(5);
-
+	notHipsterInts = new CTECArray<int>(5);
+	notHipsterDoubles = new CTECArray<double>(5);
 }
 
 NodeController::~NodeController()
@@ -22,24 +20,24 @@ NodeController::~NodeController()
 
 void NodeController :: start()
 {
-//	cout << intNode.getValue() << endl;
-//	cout << stringArrayNode.getValue() << endl;
-	string first = "first";
-	string second = "second";
-	string third = "third";
-	string fourth = "fourth";
-	string fifth = "fifth";
-
-	myStringArray->set(0, first);
-	cout << myStringArray->get(0) << endl;
-	myStringArray->set(1, second);
-	myStringArray->set(2, third);
-	myStringArray->set(3, fourth);
-	myStringArray->set(4, fifth);
-
-	for(int index = 0; index < myStringArray->getSize(); index++)
+	for(int index =0; index < notHipsterDoubles->getSize(); index++)
 	{
-		cout << "The contents at " << index << " are " << myStringArray->get(index) << endl;
+		notHipsterDoubles->set(index, (2.3 * index));
+	}
+
+	for(int index = 0; index < notHipsterDoubles->getSize(); index++)
+	{
+		cout << "notHipsterDoubles at index " << index << " contains " << notHipsterDoubles->get(index) << endl;
+	}
+
+	for(int index =0; index < notHipsterInts->getSize(); index++)
+	{
+		notHipsterInts->set(index, (23 * index));
+	}
+
+	for(int index = 0; index < notHipsterInts->getSize(); index++)
+	{
+		cout << "notHipsterInts at index " << index << " contains " << notHipsterInts->get(index) << endl;
 	}
 }
 

@@ -24,15 +24,15 @@ CTECArray<Type>::CTECArray(int size)
 		if (head != nullptr)
 		{
 			//We have more than one ArrayNode
-			ArrayNode<Type> nextNode;
-			nextNode.setNext(head);
-			head = &nextNode;
+			ArrayNode<Type>  * nextNode = new ArrayNode<Type>;
+			nextNode->setNext(head);
+			head = nextNode;
 		}
 		else
 		{
 			//This is the first node in the Array
-			ArrayNode<Type> first;
-			head = &first;
+			ArrayNode<Type> *first = new ArrayNode<Type>;
+			head = first;
 		}
 	}
 

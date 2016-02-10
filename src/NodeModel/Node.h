@@ -20,7 +20,7 @@ private:
 	Node * pointers;	//Pointer to the array of Nodes that are linked to this Node.
 public:
 	Node();
-	Node(Type value);
+	Node(const Type& value);
 	virtual ~Node();
 	Type getValue();
 	void setValue(Type value);

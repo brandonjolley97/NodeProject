@@ -10,9 +10,8 @@
 
 #include <iostream>
 #include <string>
-#include "../NodeModel/Node.h"
+
 #include "../NodeModel/Node.cpp"
-#include "../NodeModel/ArrayNode.h"
 #include "../NodeModel/ArrayNode.cpp"
 #include "../NodeModel/CTECArray.cpp"
 
@@ -21,9 +20,8 @@ using namespace std;
 class NodeController
 {
 private:
-//	Node<int> intNode;
-//	ArrayNode<string> stringArrayNode;
-	CTECArray<string> * myStringArray;
+	CTECArray<int> * notHipsterInts;
+	CTECArray<double> * notHipsterDoubles;
 public:
 	NodeController();
 	virtual ~NodeController();

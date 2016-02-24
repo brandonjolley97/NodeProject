@@ -100,6 +100,9 @@ Type CTECList<Type>::removeEnd()
 template<class Type>
 Type CTECList<Type>::removeIndex(int index)
 {
+	Type returnValue;  //In case we need to use the value we are removing
+
+	assert(size > 0 && index >= 0 && index < size); //compound assert statement.  If any or all of the statements don't pass, program terminates
 
 }
 

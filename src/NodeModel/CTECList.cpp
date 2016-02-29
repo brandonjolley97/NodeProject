@@ -68,7 +68,7 @@ Type CTECList<Type>::getFromIndex(int index)
 template<class Type>
 Type CTECList<Type>::removeFront()
 {
-	Type returnValue;  //In case we need to use the value we are removing
+	Type thingToRemove;  //In case we need to use the value we are removing
 
 	assert(size > 0);
 
@@ -77,7 +77,7 @@ Type CTECList<Type>::removeFront()
 	newHead = head->getNext();
 
 	//Get what was in the head node
-	returnValue = head->getValue();
+	thingToRemove = head->getValue();
 
 	//delete what head is pointing to
 	delete this->head;
@@ -85,7 +85,9 @@ Type CTECList<Type>::removeFront()
 	//Set head to the new head
 	this->head = newHead;
 
-	return returnValue;
+	this->calculateSize();
+
+	return thingToRemove;
 
 }
 
@@ -94,7 +96,10 @@ Type CTECList<Type>::removeEnd()
 {
 	//loop over size
 	//or
-	//loop until getNext()->getNext() == nullptr
+	//loop until getNext()->GetNext() == nullptr
+	//Before return the variable call calculateSize()
+
+
 }
 
 template<class Type>
@@ -103,6 +108,58 @@ Type CTECList<Type>::removeIndex(int index)
 	Type returnValue;  //In case we need to use the value we are removing
 
 	assert(size > 0 && index >= 0 && index < size); //compound assert statement.  If any or all of the statements don't pass, program terminates
+
+	Type thingToRemove;  //
+
+	ArrayNode<Type> * previous, deleteMe, newNext;  //Create references
+
+	if(index == 0)
+	{
+		thingToRemove = removeFront();
+	}
+	else if(index == size - 1)
+	{
+		thingToRemove = removeEnd();
+	}
+	else
+	{
+		for(int spot = 0; spot < index + 1; spot++)
+		{
+
+		}
+		this->calculateSize();
+	}
+
+	return thingToRemove;
+
+}
+
+/**
+ * Calculates the size of the list by iterating over all of the nodes in the list
+ */
+template<class Type>
+void CTECList<Type>::calculateSize()
+{
+	assert(size >= 0);
+
+	ArrayNode<Type> * counterPointer = head;
+	int count = 1;
+
+	if(counterPointer == nullptr)
+	{
+		this->size = 0;
+		return;
+	}
+	else
+	{
+		while(counterPointer->getNext() != nullptr)
+		{
+			counterPointer = counterPointer->getNext();
+			count++;
+		}
+
+		this->size = count;
+	}
 
 }
 

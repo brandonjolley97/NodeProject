@@ -32,18 +32,33 @@ int CTECList<Type>::getSize()
 template<class Type>
 void CTECList<Type>::addToFront(const Type& value)
 {
-
+	head = new ArrayNode(value, head);
 }
 
 template<class Type>
 void CTECList<Type>::addToEnd(const Type& value)
 {
-
+	end = new ArrayNode(value, end);
 }
 
 template<class Type>
 void CTECList<Type>::addToIndex(int index, const Type& value)
 {
+	ArrayNode<Type> * indexPtr = new ArrayNode<Type>();
+	indexPtr = new ArrayNode(value);
+
+	ArrayNode<Type> * previousPtr = head;
+	for(int spot = 0; spot < index; spot++)
+	{
+		previousPtr = previousPtr->getNext();
+	}
+
+
+
+
+
+
+
 
 }
 
@@ -94,11 +109,44 @@ Type CTECList<Type>::removeFront()
 template<class Type>
 Type CTECList<Type>::removeEnd()
 {
+	//Check for size==1 it is a special case.
 	//loop over size
 	//or
-	//loop until getNext()->GetNext() == nullptr
+	//loop until getNext()->getNext() == nullptr
+	//set the next to last node to point to nullptr
+	//set the next to last node as end
+	//delete the old last node
 	//Before return the variable call calculateSize()
+	//return value
+	assert(size > 0);
+	Type valueToRemove;
 
+	if(size == 1)
+	{
+		valueToRemove = removeFront();
+		end = nullptr;
+	}
+	else
+	{
+		ArrayNode<Type> * current = head;
+		for(int spot = 0; spot < size - 1; spot++)
+		{
+			current = current->getNext();
+		}
+
+		ArrayNode<Type> * pointer = head;
+		while(pointer->getNext()->getNext() != nullptr)
+		{
+			pointer = pointer->getNext();
+		}
+
+		valueToRemove = current->getNext()->getNext();
+		end = current;
+		delete current->getNext();
+	}
+
+	this->calculateSize();
+	return valueToRemove;
 
 }
 

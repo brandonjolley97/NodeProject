@@ -44,6 +44,8 @@ void CTECList<Type>::addToEnd(const Type& value)
 template<class Type>
 void CTECList<Type>::addToIndex(int index, const Type& value)
 {
+	assert(index >= 0 && index <= size);
+
 	ArrayNode<Type> * indexPtr = new ArrayNode<Type>();
 	indexPtr = new ArrayNode(value);
 

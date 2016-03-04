@@ -46,8 +46,7 @@ void CTECList<Type>::addToIndex(int index, const Type& value)
 {
 	assert(index >= 0 && index <= size);
 
-	ArrayNode<Type> * indexPtr = new ArrayNode<Type>();
-	indexPtr = new ArrayNode(value);
+	ArrayNode<Type> * indexPtr =  new ArrayNode<Type>(value);
 
 	ArrayNode<Type> * previousPtr = head;
 	for(int spot = 0; spot < index; spot++)
@@ -55,11 +54,9 @@ void CTECList<Type>::addToIndex(int index, const Type& value)
 		previousPtr = previousPtr->getNext();
 	}
 
+	indexPtr->setNext(previousPtr->getNext());
 
-
-
-
-
+	previousPtr->setNext(indexPtr);
 
 
 }

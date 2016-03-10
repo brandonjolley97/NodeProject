@@ -11,6 +11,7 @@ NodeController::NodeController()
 {
 	notHipsterInts = new CTECArray<int>(5);
 	notHipsterDoubles = new CTECArray<double>(5);
+	numbers = new CTECList<int>;
 }
 
 NodeController::~NodeController()
@@ -18,8 +19,17 @@ NodeController::~NodeController()
 
 }
 
+void NodeController::testLists()
+{
+	numbers->addToFront(3);
+	numbers->addToEnd(8);
+	cout << "End should be 8 and is: " << numbers->getEnd() << endl;
+}
+
 void NodeController :: start()
 {
+	testLists();
+
 	for(int index =0; index < notHipsterDoubles->getSize(); index++)
 	{
 		notHipsterDoubles->set(index, (2.3 * index));

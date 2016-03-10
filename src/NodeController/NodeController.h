@@ -14,6 +14,7 @@
 #include "../NodeModel/Node.cpp"
 #include "../NodeModel/ArrayNode.cpp"
 #include "../NodeModel/CTECArray.cpp"
+#include "../NodeModel/CTECList.cpp"
 
 using namespace std;
 
@@ -22,10 +23,13 @@ class NodeController
 private:
 	CTECArray<int> * notHipsterInts;
 	CTECArray<double> * notHipsterDoubles;
+	CTECList<int> * numbers;
+	void testLists();
 public:
 	NodeController();
 	virtual ~NodeController();
 	void start();
+
 };
 
 #endif /* NODECONTROLLER_NODECONTROLLER_H_ */

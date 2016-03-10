@@ -15,8 +15,8 @@ class CTECList
 {
 private:
 	int size;
-	ArrayNode<Type> head;
-	ArrayNode<Type> end;
+	ArrayNode<Type> * head;
+	ArrayNode<Type> * end;
 	void calculateSize();
 public:
 	CTECList();

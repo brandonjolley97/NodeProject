@@ -32,13 +32,13 @@ int CTECList<Type>::getSize()
 template<class Type>
 void CTECList<Type>::addToFront(const Type& value)
 {
-	head = new ArrayNode(value, head);
+	head = new ArrayNode<Type>(value, head);
 }
 
 template<class Type>
 void CTECList<Type>::addToEnd(const Type& value)
 {
-	end = new ArrayNode(value, end);
+	end = new ArrayNode<Type>(value, end);
 }
 
 template<class Type>

@@ -81,19 +81,19 @@ void CTECList<Type>::addToIndex(int index, const Type& value)
 template<class Type>
 Type CTECList<Type>::getFront()
 {
-
+	return head->getValue();
 }
 
 template<class Type>
 Type CTECList<Type>::getEnd()
 {
-
+	return end->getValue();
 }
 
 template<class Type>
 Type CTECList<Type>::getFromIndex(int index)
 {
-
+	return index;
 }
 
 template<class Type>
